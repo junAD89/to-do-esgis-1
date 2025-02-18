@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mes Notes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item *ngFor="let note of note; let i = index">
+      <ion-label>{{ note }}</ion-label>
+      <ion-button color="danger" (click)="deleteNote(i)">
+        Supprimer
+      </ion-button>
+
+    </ion-item>
+  </ion-list>
+
+  <ion-item>
+    <ion-input [(ngModel)]="newNote" placeholder="Nouvelle note"></ion-input>
+    <ion-button (click)="addNote()">Ajouter</ion-button>
+  </ion-item>
+</ion-content>
