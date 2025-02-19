@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>Mes Notes</ion-title>
   </ion-toolbar>
@@ -19,4 +19,19 @@
     <ion-input [(ngModel)]="newNote" placeholder="Nouvelle note"></ion-input>
     <ion-button (click)="addNote()">Ajouter</ion-button>
   </ion-item>
+</ion-content> -->
+
+
+<ion-content>
+
+  <h1>{{ userXp}}</h1>
+  <ion-button (click)="log()" expand="block" shape="round">
+    log
+  </ion-button>
+
+  <ion-button (click)="addExp()" expand="block" shape="round">
+    addExp
+  </ion-button>
+
+
 </ion-content>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Storage } from "@ionic/storage-angular";
-
+import { XpService } from "../xp.service";
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -13,8 +13,24 @@ export class HomePage {
   newNote: string = '';
   private _storage: Storage | null = null;
 
-  constructor(private storage: Storage) {
 
+  constructor(private storage: Storage, private xpService: XpService) {
+
+  }
+
+  userXp = this.xpService.userXp
+
+
+  async log() {
+    console.log(this.xpService.userXp);
+
+  }
+
+
+  async addExp() {
+    this.xpService.addExp(); // Appeler correctement la fonction
+    console.log('ajout');
+    console.log(this.xpService.userXp); // Vérifier si ça change bien
   }
 
   async ngOnInit() {
